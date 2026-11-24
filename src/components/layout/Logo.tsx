@@ -10,7 +10,7 @@ export function Logo() {
     >
       <span
         aria-hidden="true"
-        className="font-display grid size-9 place-items-center rounded-xl bg-accent text-sm font-bold tracking-tight text-white transition-transform duration-200 group-hover:-rotate-6"
+        className="font-display grid size-9 place-items-center rounded-xl bg-accent-solid text-sm font-bold tracking-tight text-white transition-transform duration-200 group-hover:-rotate-6"
       >
         {siteConfig.initials}
       </span>

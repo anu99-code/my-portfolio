@@ -14,21 +14,21 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative isolate scroll-mt-16 overflow-hidden"
     >
-      {/* Soft background glows */}
+      {/* Background glows */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-24 -z-10 size-96 rounded-full bg-accent-soft opacity-70 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 -z-10 size-96 rounded-full bg-accent-solid/25 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -left-24 -z-10 size-80 rounded-full bg-indigo-100/60 blur-3xl"
+        className="pointer-events-none absolute -bottom-32 -left-24 -z-10 size-80 rounded-full bg-accent/10 blur-3xl"
       />
 
       <Container className="grid items-center gap-12 py-12 md:grid-cols-2 md:gap-8 md:py-20 lg:gap-16 lg:py-28">
         {/* Text column */}
         <div className="order-last md:order-first">
           <div
-            className="animate-fade-up inline-flex items-center gap-2.5 rounded-full border border-border bg-white px-4 py-1.5 text-sm font-medium text-muted"
+            className="animate-fade-up inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-muted"
             style={delay(0)}
           >
             <span className="relative flex size-2.5" aria-hidden="true">
@@ -108,7 +108,7 @@ export function Hero() {
               {hero.stack.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-full bg-accent-soft px-3 py-1 font-mono text-xs font-medium text-accent"
+                  className="rounded-full border border-accent/20 bg-accent-soft px-3 py-1 font-mono text-xs font-medium text-accent"
                 >
                   {tech}
                 </li>

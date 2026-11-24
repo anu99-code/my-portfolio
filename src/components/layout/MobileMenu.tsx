@@ -27,7 +27,7 @@ export function MobileMenu({ links }: { links: readonly NavItem[] }) {
         aria-controls={panelId}
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen((v) => !v)}
-        className="grid size-10 place-items-center rounded-full border border-border bg-white transition-colors hover:border-foreground/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        className="grid size-10 place-items-center rounded-full border border-border bg-surface transition-colors hover:border-foreground/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         <svg
           width="18"
@@ -50,7 +50,7 @@ export function MobileMenu({ links }: { links: readonly NavItem[] }) {
       {open && (
         <div
           id={panelId}
-          className="animate-fade-up absolute inset-x-0 top-full border-b border-border bg-background px-5 pb-6 pt-2 shadow-lg shadow-black/5"
+          className="animate-fade-up absolute inset-x-0 top-full border-b border-border bg-background px-5 pb-6 pt-2 shadow-2xl shadow-black/50"
         >
           <nav aria-label="Mobile" className="flex flex-col">
             {links.map((link) => (

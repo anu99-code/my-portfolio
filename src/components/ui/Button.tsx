@@ -1,6 +1,5 @@
-
 import Link from "next/link";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
 type Variant = "primary" | "secondary";
 type Size = "sm" | "md";
@@ -8,7 +7,6 @@ type Size = "sm" | "md";
 type ButtonProps = ComponentPropsWithoutRef<typeof Link> & {
   variant?: Variant;
   size?: Size;
-  children: ReactNode;
 };
 
 const base =
@@ -21,24 +19,21 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-white shadow-lg shadow-accent/25 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30",
+    "bg-accent-solid text-white shadow-lg shadow-accent-solid/30 hover:-translate-y-0.5 hover:bg-accent-solid/90 hover:shadow-xl hover:shadow-accent-solid/40",
   secondary:
-    "border border-border bg-white text-foreground hover:-translate-y-0.5 hover:border-foreground/30",
+    "border border-border bg-surface text-foreground hover:-translate-y-0.5 hover:border-foreground/30",
 };
 
 export function Button({
   variant = "primary",
   size = "md",
   className = "",
-  children,
   ...props
 }: ButtonProps) {
   return (
     <Link
       className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
       {...props}
-    >
-      {children}
-    </Link>
+    />
   );
 }

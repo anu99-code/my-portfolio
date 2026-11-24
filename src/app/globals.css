@@ -1,24 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf7;
-  --foreground: #14141a;
-  --muted: #5c5c66;
-  --accent: #4f46e5;
-  --accent-soft: #e0e7ff;
-  --border: #e7e5df;
+  color-scheme: dark;
+  --background: #0c0c11;
+  --foreground: #f4f4f8;
+  --muted: #9b9bb0;
+  --surface: #15151d;
+  --border: #272735;
+  --accent: #9ea2ff;
+  --accent-solid: #4f46e5;
+  --accent-soft: #1c1b3d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
+  --color-surface: var(--surface);
   --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-display);
+  --font-display: var(--font-bricolage);
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-float: float 6s ease-in-out infinite;
@@ -52,8 +57,13 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-solid);
+  color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { siteConfig } from "@/lib/site-config";
 
 type ProfileVisualProps = {
@@ -13,7 +14,7 @@ function FloatingBadge({
   enterDelay,
   floatDelay,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   enterDelay: number;
   floatDelay: number;
@@ -26,7 +27,7 @@ function FloatingBadge({
       style={{ animationDelay: `${enterDelay}ms` }}
     >
       <div
-        className="animate-float flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium shadow-lg shadow-black/5"
+        className="animate-float flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium shadow-lg shadow-black/40"
         style={{ animationDelay: `${floatDelay}ms` }}
       >
         {children}
@@ -44,7 +45,7 @@ export function ProfileVisual({
       {/* Offset accent shape behind the frame */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 translate-x-4 translate-y-4 rounded-t-[50%/40%] rounded-b-[2rem] bg-accent sm:translate-x-6 sm:translate-y-6"
+        className="absolute inset-0 translate-x-4 translate-y-4 rounded-t-[50%/40%] rounded-b-[2rem] bg-accent-solid sm:translate-x-6 sm:translate-y-6"
       />
 
       {/* Decorative ring */}
@@ -54,7 +55,7 @@ export function ProfileVisual({
       />
 
       {/* Arch frame */}
-      <div className="relative aspect-4/5 overflow-hidden rounded-t-[50%/40%] rounded-b-[2rem] border border-border bg-linear-to-br from-accent-soft via-white to-indigo-100 shadow-xl shadow-accent/10">
+      <div className="relative aspect-4/5 overflow-hidden rounded-t-[50%/40%] rounded-b-[2rem] border border-border bg-linear-to-br from-accent-soft via-surface to-background shadow-2xl shadow-accent-solid/20">
         {src ? (
           <Image
             src={src}
@@ -69,7 +70,7 @@ export function ProfileVisual({
             <svg
               viewBox="0 0 200 250"
               preserveAspectRatio="xMidYMax meet"
-              className="absolute inset-x-0 bottom-0 h-[85%] w-full text-accent/35"
+              className="absolute inset-x-0 bottom-0 h-[85%] w-full text-accent/40"
               fill="currentColor"
               aria-hidden="true"
             >
